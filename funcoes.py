@@ -175,3 +175,29 @@ def calcula_pontos_quadra(dados):  ## question 9
         i += 1
 
     return 0
+
+def calcula_pontos_quina(dados):   ## question 10
+    contagem = {}
+    i = 0
+
+    # contar ocorrências
+    while i < len(dados):
+        valor = dados[i]
+        
+        if valor in contagem:
+            contagem[valor] += 1
+        else:
+            contagem[valor] = 1
+        
+        i += 1
+
+    # verificar se existe 5 ou mais
+    chaves = list(contagem.keys())
+    i = 0
+    
+    while i < len(chaves):
+        if contagem[chaves[i]] >= 5:
+            return 50
+        i += 1
+
+    return 0
