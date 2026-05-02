@@ -87,3 +87,20 @@ def calcula_pontos_sequencia_baixa(dados): ## question 6
         return 15
 
     return 0
+
+def calcula_pontos_sequencia_alta(dados):  ## question 7
+    # tirar repetidos
+    valores = []
+    i = 0
+    while i < len(dados):
+        if dados[i] not in valores:
+            valores.append(dados[i])
+        i += 1
+
+    # verificar sequências de 5
+    if (1 in valores and 2 in valores and 3 in valores and 4 in valores and 5 in valores):
+        return 30
+    if (2 in valores and 3 in valores and 4 in valores and 5 in valores and 6 in valores):
+        return 30
+
+    return 0
