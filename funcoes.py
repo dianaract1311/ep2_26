@@ -1,6 +1,6 @@
 import random
 
-def rolar_dados(n):
+def rolar_dados(n):  ## question 1
     lista = []
     i = 0
     
@@ -11,7 +11,7 @@ def rolar_dados(n):
     
     return lista
 
-def guardar_dado(dados_rolados, dados_no_estoque, dado_para_guardar):
+def guardar_dado(dados_rolados, dados_no_estoque, dado_para_guardar):  ## question 2
     dado = dados_rolados[dado_para_guardar]
     
     nova_lista = []
@@ -26,7 +26,7 @@ def guardar_dado(dados_rolados, dados_no_estoque, dado_para_guardar):
     
     return [nova_lista, dados_no_estoque]
 
-def remover_dado(dados_rolados, dados_no_estoque, dado_para_remover):
+def remover_dado(dados_rolados, dados_no_estoque, dado_para_remover):  ## question 3
     dado = dados_no_estoque[dado_para_remover]
     
     nova_lista = []
@@ -41,7 +41,7 @@ def remover_dado(dados_rolados, dados_no_estoque, dado_para_remover):
     
     return [dados_rolados, nova_lista]
 
-def calcula_pontos_regra_simples(dados):
+def calcula_pontos_regra_simples(dados):  ## question 4
     resultado = {}
     
     i = 1
@@ -58,3 +58,13 @@ def calcula_pontos_regra_simples(dados):
         i += 1
     
     return resultado
+
+def calcula_pontos_soma(dados):  ## question 5
+    soma = 0
+    i = 0
+    
+    while i < len(dados):
+        soma += dados[i]
+        i += 1
+    
+    return soma
