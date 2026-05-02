@@ -68,3 +68,22 @@ def calcula_pontos_soma(dados):  ## question 5
         i += 1
     
     return soma
+
+def calcula_pontos_sequencia_baixa(dados): ## question 6
+    # tirar repetidos
+    valores = []
+    i = 0
+    while i < len(dados):
+        if dados[i] not in valores:
+            valores.append(dados[i])
+        i += 1
+
+    # verificar sequências
+    if (1 in valores and 2 in valores and 3 in valores and 4 in valores):
+        return 15
+    if (2 in valores and 3 in valores and 4 in valores and 5 in valores):
+        return 15
+    if (3 in valores and 4 in valores and 5 in valores and 6 in valores):
+        return 15
+
+    return 0
