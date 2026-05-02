@@ -40,3 +40,21 @@ def remover_dado(dados_rolados, dados_no_estoque, dado_para_remover):
     dados_rolados.append(dado)
     
     return [dados_rolados, nova_lista]
+
+def calcula_pontos_regra_simples(dados):
+    resultado = {}
+    
+    i = 1
+    while i <= 6:
+        soma = 0
+        
+        j = 0
+        while j < len(dados):
+            if dados[j] == i:
+                soma += i
+            j += 1
+        
+        resultado[i] = soma
+        i += 1
+    
+    return resultado
