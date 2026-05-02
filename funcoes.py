@@ -202,7 +202,7 @@ def calcula_pontos_quina(dados):   ## question 10
 
     return 0
 
-def calcula_pontos_regra_avancada(dados):  ## question 10
+def calcula_pontos_regra_avancada(dados):  ## question 11
     resultado = {}
     
     resultado['cinco_iguais'] = calcula_pontos_quina(dados)
@@ -213,3 +213,16 @@ def calcula_pontos_regra_avancada(dados):  ## question 10
     resultado['sequencia_baixa'] = calcula_pontos_sequencia_baixa(dados)
     
     return resultado
+
+def faz_jogada(dados, categoria, cartela_de_pontos):  ## question 12
+    # regra simples
+    if categoria == "1" or categoria == "2" or categoria == "3" or categoria == "4" or categoria == "5" or categoria == "6":
+        pontos_simples = calcula_pontos_regra_simples(dados)
+        cartela_de_pontos['regra_simples'][int(categoria)] = pontos_simples[int(categoria)]
+    
+    # regra avançada
+    else:
+        pontos_avancados = calcula_pontos_regra_avancada(dados)
+        cartela_de_pontos['regra_avancada'][categoria] = pontos_avancados[categoria]
+    
+    return cartela_de_pontos
