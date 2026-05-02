@@ -104,3 +104,40 @@ def calcula_pontos_sequencia_alta(dados):  ## question 7
         return 30
 
     return 0
+
+def calcula_pontos_full_house(dados):  ## question 8
+    contagem = {}
+    i = 0
+
+    # contar ocorrências
+    while i < len(dados):
+        valor = dados[i]
+        
+        if valor in contagem:
+            contagem[valor] += 1
+        else:
+            contagem[valor] = 1
+        
+        i += 1
+
+    # pegar quantidades
+    quantidades = []
+    chaves = list(contagem.keys())
+    i = 0
+    
+    while i < len(chaves):
+        quantidades.append(contagem[chaves[i]])
+        i += 1
+
+    # verificar full house
+    if 3 in quantidades and 2 in quantidades:
+        soma = 0
+        i = 0
+        
+        while i < len(dados):
+            soma += dados[i]
+            i += 1
+        
+        return soma
+
+    return 0
