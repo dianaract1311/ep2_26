@@ -141,3 +141,37 @@ def calcula_pontos_full_house(dados):  ## question 8
         return soma
 
     return 0
+
+def calcula_pontos_quadra(dados):  ## question 9
+    contagem = {}
+    i = 0
+
+    # contar ocorrências
+    while i < len(dados):
+        valor = dados[i]
+        
+        if valor in contagem:
+            contagem[valor] += 1
+        else:
+            contagem[valor] = 1
+        
+        i += 1
+
+    # verificar se existe 4 ou mais
+    chaves = list(contagem.keys())
+    i = 0
+    
+    while i < len(chaves):
+        if contagem[chaves[i]] >= 4:
+            soma = 0
+            j = 0
+            
+            while j < len(dados):
+                soma += dados[j]
+                j += 1
+            
+            return soma
+        
+        i += 1
+
+    return 0
